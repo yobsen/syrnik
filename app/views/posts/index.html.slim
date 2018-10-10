@@ -1,0 +1,12 @@
+.row
+  .col
+    h1 Title of this section
+    - @posts.each do |post|
+      p= post.created_at
+      p= post.weight
+      p= post.description
+      p= post.id
+    button.btn.btn-info type="button" Сыр
+
+.row
+  .col-sm-6
