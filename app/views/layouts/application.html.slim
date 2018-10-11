@@ -5,7 +5,7 @@ html
     meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"
     meta content="" name="description"
     meta content="" name="author"
-    title sir Syr
+    title Sir Syr
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -13,5 +13,18 @@ html
     = javascript_include_tag 'application'
 
   body
+    .container
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand href="#"  Syrnik Page
+        button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item.active
+              a.nav-link href="/"
+                | Stories
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link href=new_post_path Add New Story
     main.container
       .container= yield
