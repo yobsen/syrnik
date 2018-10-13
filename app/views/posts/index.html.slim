@@ -8,10 +8,12 @@
             img.card-img-top alt=("Card image cap") src=asset_path(post.photo)
           .card-body
             h5.card-title
-              = "Day № #{post.id}"
+              = post.created_at.strftime("%d %B")
               span.badge.badge-pill.badge-info.float-right= post.created_at.strftime("%H:%M")
               span.badge.badge-pill.badge-danger.float-right= post.weight
             p.card-text= post.description
+            = link_to 'Destroy', post_path(post),
+              data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
             /a.btn.btn-primary href="#"  Go somewhere
 
 /.row

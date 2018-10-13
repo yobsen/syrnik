@@ -3,16 +3,32 @@
     h1 Add New Story
 
 .container
-  form
-  .form-group
-    label Weight
-    input.form-control placeholder=("Enter weight")
-    .form-group
-      label Comment
-      input.form-control placeholder=("Your comment")
-    .form-group
-      label Syrnik Photo
-      input.form-control-file type="file"
-    button.btn.btn-info type="submit"  Submit
+  /form
+  /.form-group
+  /  label Weight
+  /  input.form-control placeholder=("Enter weight")
+  /  .form-group
+  /    label Comment
+  /    input.form-control placeholder=("Your comment")
+  /  .form-group
+  /    label Syrnik Photo
+  /    input.form-control-file type="file"
+  /  button.btn.btn-info type="submit"  Submit
+  .row
+    .col-6
+      = form_for @post do |f|
+        .form-group
+          label Weight:
+          = f.text_field :weight, class: 'form-control'
+
+        .form-group
+          label Description:
+          = f.text_area :description, class: 'form-control'
 
 
+        .form-group
+          label Photo:
+          = f.text_field :photo, class: 'form-control'
+
+
+        = f.submit class: 'btn btn-info'
