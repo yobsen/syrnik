@@ -15,6 +15,7 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
+gem 'carrierwave', '~> 1.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

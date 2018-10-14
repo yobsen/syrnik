@@ -12,4 +12,5 @@
             span.badge.badge-pill.badge-info.float-right= pet.age.to_i
             = link_to 'Destroy', pet_path(pet),
               data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
+            = link_to 'Edit', edit_pet_path(pet), class: 'btn btn-info'
 
