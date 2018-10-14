@@ -1,0 +1,24 @@
+.container
+  .row
+    .col-6
+      = form_for pet do |f|
+        .form-group
+          label Name:
+          = f.text_field :name, class: 'form-control'
+
+        .form-group
+          label Animal:
+          = f.text_area :animal, class: 'form-control'
+
+
+        .form-group
+          label Avatar:
+          = f.text_area :avatar, class: 'form-control'
+
+
+        .form-group
+          label Age:
+          = f.text_field :age, class: 'form-control'
+
+
+        = f.submit class: 'btn btn-info'
