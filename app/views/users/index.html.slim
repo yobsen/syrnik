@@ -1,0 +1,13 @@
+.row
+  .col
+    h1 Users Information
+    .card-deck
+      - @users.each do |user|
+        .card style=("width: 18rem;") data-id=user.id
+          .card-body
+            h5.card-title
+              = user.name
+              span.badge.badge-pill.badge-info.float-right= user.created_at.strftime("%H:%M")
+            p.card-text= user.email
+            = link_to 'Destroy', user_path(user),
+              data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'

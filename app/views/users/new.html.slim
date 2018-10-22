@@ -1,2 +1,22 @@
-h1 Users#new
-p Find me in app/views/users/new.html.slim
+- provide(:title, 'Sign up')
+h1 Sign up
+.row
+  .col-md-6.col-md-offset-3
+    = form_for(@user) do |f|
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: "form-control", placeholder: "Name"
+
+      .form-group
+        = f.label :email
+        = f.email_field :email, class: "form-control", placeholder: "E-mail"
+
+      .form-group
+        = f.label :password
+        = f.password_field :password, class: "form-control", placeholder: "Password"
+
+      .form-group
+        = f.label :password_confirmation
+        = f.password_field :password, class: "form-control", placeholder: "Password Confirmation"
+
+      = f.submit "Create my account", class: "btn btn-primary"
