@@ -20,5 +20,8 @@
           label Age:
           = f.text_field :age, class: 'form-control'
 
+        .form-group
+          label User:
+          = f.select :user_id, @users
 
         = f.submit class: 'btn btn-info'

@@ -1,23 +1,19 @@
 .row
   .col
     h1 Weight Diary
-    .card-deck
-      - @posts.each do |post|
-        .card style=("width: 18rem;") data-id=post.id
-          - if post.photo
-            img.card-img-top alt=("Card image cap") src=asset_path(post.photo)
-          .card-body
-            h5.card-title
-              = post.created_at.strftime("%d %B")
-              span.badge.badge-pill.badge-info.float-right= post.created_at.strftime("%H:%M")
-              span.badge.badge-pill.badge-danger.float-right= post.weight
-            p.card-text= post.description
-            = link_to 'Destroy', post_path(post),
-              data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
-            /a.btn.btn-primary href="#"  Go somewhere
-
-/.row
-  .col
-    /button.btn.btn-info type="button" Сыр
-
+    - @posts.each_slice(2) do |post_row|
+      .row
+        - post_row.each do |post|
+          .col-sm-6
+            .card data-id=post.id
+              - if post.photo
+                img.card-img-top alt=("Card image cap") src=asset_path(post.photo)
+              .card-body
+                h5.card-title
+                  = post.created_at.strftime("%d %B")
+                  span.badge.badge-pill.badge-info.float-right= post.created_at.strftime("%H:%M")
+                  span.badge.badge-pill.badge-danger.float-right= post.weight
+                p.card-text= post.description
+                = link_to 'Destroy', post_path(post),
+                  data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
 

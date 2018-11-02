@@ -1,16 +1,18 @@
 .row
   .col
     h1 Pets
-    .card-deck
-      - @pets.each do |pet|
-        .card data-id=pet.id
-          - if pet.avatar
-            img.card-img-top alt=("Card image cap") src=asset_path(pet.avatar)
-          .card-body
-            h5.card-title= pet.name
-            h6.card-subtitle.mb-2.text-muted= pet.animal
-            span.badge.badge-pill.badge-info.float-right= pet.age.to_i
-            = link_to 'Destroy', pet_path(pet),
-              data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
-            = link_to 'Edit', edit_pet_path(pet), class: 'btn btn-info'
+    - @pets.each_slice(3).each do |pet_row|
+      .row
+          - pet_row.each do |pet|
+            .col-sm-4
+              .card data-id=pet.id
+                - if pet.avatar
+                  img.card-img-top alt=("Card image cap") src=asset_path(pet.avatar)
+                .card-body
+                  h5.card-title= pet.name
+                  h6.card-subtitle.mb-2.text-muted= pet.animal
+                  span.badge.badge-pill.badge-info.float-right= pet.age.to_i
+                  = link_to 'Destroy', pet_path(pet),
+                    data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
+                  = link_to 'Edit', edit_pet_path(pet), class: 'btn btn-info'
 

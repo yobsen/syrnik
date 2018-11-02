@@ -28,7 +28,12 @@
 
         .form-group
           label Photo:
-          = f.text_field :photo, class: 'form-control'
+          = f.file_field :photo, class: 'form-control'
+
+        .form-group
+          label Pet:
+          = f.select :pet_id, @pets
+
 
 
         = f.submit class: 'btn btn-info'

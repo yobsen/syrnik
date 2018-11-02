@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @pets = Pet.pluck(:name, :id)
   end
 
   def create

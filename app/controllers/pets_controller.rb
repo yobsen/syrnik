@@ -17,6 +17,7 @@ class PetsController < ApplicationController
 
   def new
     @pet = Pet.new
+    @users = User.pluck(:name, :id)
   end
 
   def index
@@ -28,12 +29,13 @@ class PetsController < ApplicationController
 
   def edit
     @pet = Pet.find(params[:id])
+    @users = User.pluck(:name, :id)
   end
 
   def update
     @pet = Pet.find(params[:id])
     if @pet.update(pet_params)
-      redirect_to @pet
+      redirect_to pets_path
     else
       render "edit"
     end
