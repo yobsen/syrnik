@@ -10,7 +10,7 @@ set :linked_dirs, %w{log tmp/pids tmp/sockets vendor/bundle public/uploads}
 # Git
 # ===
 set :branch, "master"
-set :repo_url, "git@bitbucket.org:porosb/syrnik.git"
+set :repo_url, "git@github.com:porosb/syrnik.git"
 
 # SSH
 # ===
