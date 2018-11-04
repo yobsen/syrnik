@@ -6,6 +6,7 @@ class PetsController < ApplicationController
     else
       # This line overrides the default rendering behavior, which
       # would have been to render the "create" view.
+      @users = User.pluck(:name, :id)
       render "new"
     end
   end
