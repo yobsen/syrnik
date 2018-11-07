@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
@@ -7,7 +9,7 @@ class PetsController < ApplicationController
       # This line overrides the default rendering behavior, which
       # would have been to render the "create" view.
       @users = User.pluck(:name, :id)
-      render "new"
+      render 'new'
     end
   end
 
@@ -25,8 +27,7 @@ class PetsController < ApplicationController
     @pets = Pet.order(updated_at: :desc)
   end
 
-  def show
-  end
+  def show; end
 
   def edit
     @pet = Pet.find(params[:id])
@@ -38,7 +39,7 @@ class PetsController < ApplicationController
     if @pet.update(pet_params)
       redirect_to pets_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -48,6 +49,3 @@ class PetsController < ApplicationController
     params.require(:pet).permit(:name, :animal, :avatar, :age)
   end
 end
-
-
-

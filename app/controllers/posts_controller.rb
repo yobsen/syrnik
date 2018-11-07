@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   def index
     @posts = Post.all.order(id: :desc)
@@ -19,7 +21,7 @@ class PostsController < ApplicationController
     else
       # This line overrides the default rendering behavior, which
       # would have been to render the "create" view.
-      render "new"
+      render 'new'
     end
   end
 
@@ -36,7 +38,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -45,12 +47,9 @@ class PostsController < ApplicationController
     redirect_to posts_path if @post.destroy
   end
 
-
   private
 
   def post_params
     params.require(:post).permit(:weight, :description, :photo)
   end
 end
-
-

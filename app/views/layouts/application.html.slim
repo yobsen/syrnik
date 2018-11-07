@@ -33,9 +33,16 @@ html
             li.nav-item
               a.nav-link href=new_pet_path Add New Pet
             li.nav-item
-              a.nav-link href=new_user_path Sign up
-            li.nav-item
               a.nav-link href=users_path List of Users
 
+            - if logged_in?
+              li.nav-item= link_to "Log out", logout_path, method: :delete, class: 'nav-link'
+            - else
+              li.nav-item
+                a.nav-link href=new_session_path Log in
+              li.nav-item
+                a.nav-link href=new_user_path Sign up
+
     main.container
-      .container= yield
+      = render 'layouts/flashes'
+      = yield

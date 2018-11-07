@@ -1,23 +1,24 @@
+# frozen_string_literal: true
+
 # Application
 # ===========
-set :application, "fyp"
+set :application, 'fyp'
 set :deploy_to, "/data/projects/#{fetch :application}"
-set :rails_env, "production"
+set :rails_env, 'production'
 
-set :linked_files, %w{config/settings/production.yml config/database.yml}
-set :linked_dirs, %w{log tmp/pids tmp/sockets vendor/bundle public/uploads}
+set :linked_files, %w[config/settings/production.yml config/database.yml]
+set :linked_dirs, %w[log tmp/pids tmp/sockets vendor/bundle public/uploads]
 
 # Git
 # ===
-set :branch, "master"
-set :repo_url, "git@github.com:porosb/syrnik.git"
+set :branch, 'master'
+set :repo_url, 'git@github.com:porosb/syrnik.git'
 
 # SSH
 # ===
-set :ssh_options, {
-  user: "ksevelyar",
-  forward_agent: true
-}
+set :ssh_options,
+    user: 'ksevelyar',
+    forward_agent: true
 
 # Capistrano
 # ==========
@@ -28,7 +29,7 @@ set :keep_releases, 7
 # Tasks
 # =====
 namespace :deploy do
-  after :finishing, "deploy:cleanup"
+  after :finishing, 'deploy:cleanup'
   after :publishing, :restart
 
   desc 'Start application'
@@ -44,7 +45,6 @@ namespace :deploy do
       execute "sudo /etc/init.d/unicorn_#{fetch :application} stop"
     end
   end
-
 
   desc 'Restart application'
   task :restart do
