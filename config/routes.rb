@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :pets
   resources :users
-  resources :sessions, only: %i[new create destroy]
-  delete '/logout',  to: 'sessions#destroy'
+  resource :sessions, only: %i[new create destroy]
   root 'posts#index'
 end

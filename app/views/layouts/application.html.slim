@@ -17,7 +17,7 @@ html
     .container
       nav.navbar.navbar-expand-lg.navbar-light.bg-light
         img.logo src="/images/shiba-logo.png"
-        a.navbar-brand.font-weight-bold href="/"  Fit Your Pet
+        a.navbar-brand.font-weight-bold href="/" Fit Your Pet
         button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
           span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
@@ -36,10 +36,10 @@ html
               a.nav-link href=users_path List of Users
 
             - if logged_in?
-              li.nav-item= link_to "Log out", logout_path, method: :delete, class: 'nav-link'
+              li.nav-item= link_to 'Log Out', sessions_path, method: :delete, class: :'nav-link'
             - else
               li.nav-item
-                a.nav-link href=new_session_path Log in
+                a.nav-link href=new_sessions_path Log in
               li.nav-item
                 a.nav-link href=new_user_path Sign up
 
