@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @pets = Pet.pluck(:name, :id)
+    redirect_to posts_path if @post.save
   end
 
   def create

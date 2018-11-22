@@ -4,10 +4,12 @@
     .card-deck
       - @users.each do |user|
         .card style=("width: 18rem;") data-id=user.id
+          = gravatar_for user, size: 400
           .card-body
             h5.card-title
               = user.name
-              span.badge.badge-pill.badge-info.float-right= user.created_at.strftime("%H:%M")
+              span.badge.badge-pill.badge-info.float-right = user.created_at.strftime("%-d %B, %Y")
             p.card-text= user.email
-            = link_to 'Destroy', user_path(user),
-              data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
+            -  if current_user.admin? && !current_user?(user)
+              = link_to 'Destroy', user_path(user),
+                data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
