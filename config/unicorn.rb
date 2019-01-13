@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-app_path   = '/data/projects/fyp'
+app_path   = '/code/fyp'
 rails_root = "#{app_path}/current"
 
 pid_file   = "#{rails_root}/tmp/pids/unicorn.pid"

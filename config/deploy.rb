@@ -3,10 +3,10 @@
 # Application
 # ===========
 set :application, 'fyp'
-set :deploy_to, "/data/projects/#{fetch :application}"
+set :deploy_to, "/data/code/#{fetch :application}"
 set :rails_env, 'production'
 
-set :linked_files, %w[config/settings/production.yml config/database.yml]
+set :linked_files, %w[config/settings.local.yml config/database.yml]
 set :linked_dirs, %w[log tmp/pids tmp/sockets vendor/bundle public/uploads]
 
 # Git
