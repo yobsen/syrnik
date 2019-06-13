@@ -13,7 +13,7 @@ gem 'puma', '~> 3.11'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave', '~> 1.0'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
