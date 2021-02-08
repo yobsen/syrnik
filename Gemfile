@@ -14,7 +14,7 @@ gem 'puma', '~> 3.11'
 gem 'webpacker'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'bootstrap', '~> 4.1.3'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'slim-rails'
